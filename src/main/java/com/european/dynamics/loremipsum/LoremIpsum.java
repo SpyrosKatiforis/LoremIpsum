@@ -3,13 +3,22 @@ package com.european.dynamics.loremipsum;
 import com.european.dynamics.loremipsum.models.Book;
 
 /**
- * Main class to demonstrate the use cases of parsing, marshalling, XSD generation,
- * XML validation, and presenting specific elements.
+ * Main class to demonstrate the various use cases of the application.
+ * The application parses a text file, generates an XML file, creates an XSD schema,
+ * validates the XML file against the XSD schema, presents specific elements from the document,
+ * and generates document statistics such as the number of paragraphs, lines, words, distinct words,
+ * and other metadata (e.g., author name, creation date/time).
  */
 public class LoremIpsum {
 
     /**
-     * Main method to demonstrate various use cases of the application.
+     * Main method to run the application, which includes the following steps:
+     * 1. Parse a text file into a structured Book object.
+     * 2. Marshall the Book object into an XML file.
+     * 3. Generate an XSD schema based on the Book model.
+     * 4. Validate the XML file against the generated XSD schema.
+     * 5. Present specific elements from the document (Line 13, Paragraph 7, Chapter 4).
+     * 6. Generate and display statistics about the document.
      *
      * @param args Command-line arguments (not used).
      */
@@ -34,6 +43,9 @@ public class LoremIpsum {
 
             // Step 5: Present specific elements (Line 13, Paragraph 7, Chapter 4)
             ElementPresenter.presentSpecificElements(book);
+
+            // Step 6: Generate and display document statistics
+            StatisticsGenerator.generateStatistics(book);
 
         } catch (Exception e) {
             e.printStackTrace();

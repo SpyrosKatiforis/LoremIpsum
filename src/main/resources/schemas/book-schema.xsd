@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-  <xs:element name="book" type="book"/>
-
   <xs:complexType name="book">
     <xs:sequence>
-      <xs:element name="chapter" type="chapter" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="chapters" type="chapter" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="chapter">
     <xs:sequence>
-      <xs:element name="paragraph" type="paragraph" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="paragraphs" type="paragraph" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="paragraph">
     <xs:sequence>
-      <xs:element name="line" type="line" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="lines" type="line" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
 
